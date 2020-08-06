@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link rel="StyleSheet" href="estilos/estilo.css" type="text/css" />
+	<title>Información</title>
+	<style>
+.myDiv {
+	border: 5px outset red;
+	background-color: lightblue;
+	text-align: center;
+}
+</style>
+</h:head>
+<h:body>
+
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="index.xhtml">INICIO</a></li>
+				<li><a href="repositorio.xhtml">REPOSITORIO</a></li>
+				<li><a href="informacion.xhtml">INFORMACION</a></li>
+				<li><a href="contacto.xhtml">CONTÁCTANOS</a></li>
+				<li><a href="registrarUsuario.xhtml">REGÍSTRATE</a></li>
+				<li><a href="login.xhtml">LOGIN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div class="main">
+
+		<div>
+
+			<table style="width: 100%;" cellspacing="1" cellpadding="3"
+				border="0" bgcolor="#1E679A">
+				<tr>
+					<td><font color="#FFFFFF" face="arial, verdana, helvetica"
+						align="left"> </font></td>
+				</tr>
+				<tr>
+					<td class="cuerpo">
+
+
+						<h2 align="center">Información General de la Aplicación</h2>
+						<p>Esta aplicación web ha sido diseñada para recopilar los
+							datos de los nacimientos registrados en el Registro Civil
+							Ecuatoriano, mismas que serán procesadas en una agradable
+							interfaz gráfica cómoda para el usuario</p>
+
+						<p>Se podrá elegir a gusto los tipos de datos específicos que
+							se necesitará ver, mismos que se mostrarán con datos tanto
+							cuantitativos, como a nivel gráfico para una mejor comprensión.</p>
+
+						<p>Ofrece diversos reportes y gráficos estadísticos Mensuales
+							y Anuales de los datos que se deseen analizar de una forma muy
+							dinámica e intuitiva.</p>
+
+
+					</td>
+					<td class="cuerpo"><img src="imagenes/informacion.png"
+						align="right" style="width: 390px; height: 350px;" /></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div align="center">
+		<h:panelGrid id="panel">
+			<p:chart type="pie" model="#{beanReportes.torta}"
+				style="width:710px;height:720px" />
+		</h:panelGrid>
+
+	</div>
+	<div class="myDiv">
+		<h3>
+			Si deseas obtener más gráficos como este, con varios filtros de
+			búsqueda <a href="registrarUsuario.xhtml">Regístrate Aquí</a>
+		</h3>
+	</div>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" /> <a
+			href="repositorio.xhtml">Más Información</a> <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b> Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno
+	</div>
+</h:body>
+
+</html>

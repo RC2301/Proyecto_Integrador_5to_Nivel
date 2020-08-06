@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link rel="StyleSheet" href="estilos/listadoUsuarios.css"
+		type="text/css" />
+	<title>Filtros por Provincia</title>
+</h:head>
+
+<h:body>
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="MenuUsuario.xhtml">MENU PRINCIPAL</a></li>
+				
+				<li><a href="cambioContraUser.xhtml">ACTUALIZAR CONTRASEÑA</a></li>
+				
+				<li><a href="menuReportes.xhtml">VER REPORTES</a></li>
+				
+				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<br />
+	<br />
+	<div align="center">
+	<h:form id="frmFiltro">
+		<p:panel header="Filtros de busqueda">
+			<p:panelGrid>
+				<p:row>
+					<p:column>Seleccione provincia</p:column>
+					<p:column>
+						<p:selectOneMenu id="somProvincia" required="true"
+							value="#{graficosControl.codProvincia}">
+							<f:selectItems value="#{graficosControl.listaProvincia}" />
+						</p:selectOneMenu>
+						<p:message for="somProvincia" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Año Inicial</p:column>
+					<p:column>
+						<p:selectOneMenu id="somAnio1" required="true"
+							value="#{graficosControl.anio1}">
+							<f:selectItems value="#{graficosControl.listaAnios}" />
+						</p:selectOneMenu>
+						<p:message for="somAnio1" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>Año Final</p:column>
+					<p:column>
+						<p:selectOneMenu id="somAnio2" required="true"
+							value="#{graficosControl.anio2}">
+							<f:selectItems value="#{graficosControl.listaAnios}" />
+						</p:selectOneMenu>
+						<p:message for="somAnio2" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column colspan="2">
+						<p:commandButton icon="ui-icon-search" title="Buscar"
+							value="Buscar" actionListener="#{graficosControl.buscar()}"
+							process="@form" update=":frmResultado,:frmFiltro" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+	
+	</div>
+	
+	<h:form id="frmResultado">
+		<p:panel header="Resultado">
+			<h:outputText value="#{graficosControl.resultado}" />
+			<p:dataTable rows="10" paginator="true" paginatorPosition="bottom"
+				value="#{graficosControl.reporte}" var="rep">
+				<p:column headerText="Provincia">
+					<h:outputText value="#{rep.datos}" />
+				</p:column>
+				<p:column headerText="Número de personas">
+					<h:outputText value="#{rep.contador}" />
+				</p:column>
+			</p:dataTable>
+
+			<div align="center">
+				<p:chart type="pie" model="#{graficosControl.torta}"
+					style="width:800px;height:790px"
+					rendered="#{graficosControl.torta != null}" />
+			</div>
+
+
+		</p:panel>
+
+	</h:form>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+
+	<a href="ProvinciaVsAnio"> <p:commandButton type="button" class="boton"
+			value="Descargar Reporte Total en Gráfico Pastel" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+		 	<a href="TodosProvinciaAnio"> <p:commandButton type="button"
+			class="boton" value="Descargar Reporte Textual detallado por Año" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+
+		<br></br>
+	<br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="reportGeo.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar a Filtros Geográficos" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+
+	<a href="menuReportes.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar al Menú de Reportes" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+		
+	<br />
+	<br />
+	<br />
+	<br />
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" />  <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b> Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno.
+	</div>
+</h:body>
+</html>

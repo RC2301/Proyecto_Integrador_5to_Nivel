@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<link rel="StyleSheet" href="estilos/listadoUsuarios.css"
+	type="text/css" />
+<title>Listado de Usuarios</title>
+
+</head>
+<body>
+
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="MenuAdministrador.xhtml">MENU PRINCIPAL</a></li>
+				<li><a href="addUsuario.xhtml">AGREGAR USUARIOS</a></li>
+				<li><a href="listadoUsuarios.xhtml">VER USUARIOS</a></li>
+				<li><a href="auditoria.xhtml">VER DATOS DE AUDITORÍA</a></li>
+				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+
+	<br />
+	<br />
+
+	<div align="center" style="font-size: 30px;">
+
+		<br></br> <br></br>
+		
+			<div align="center">
+				<h1>Listado de Usuarios</h1>
+			</div>
+			<h:form>
+			<h:dataTable id="personas"
+				value="#{beanRegistroPersona.listaPersona()}" var="listarUsuarios"
+				border="1">
+				<h:column>
+					<f:facet name="header">Nombre Usuario</f:facet>    				
+                                #{listarUsuarios.nombre}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Apellido Usuario</f:facet>    				
+                                #{listarUsuarios.apellido}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Cedula</f:facet>    				
+                                #{listarUsuarios.doc_identidad}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Correo Electrónico</f:facet>    				
+                                #{listarUsuarios.correo_electronico}
+                        </h:column>
+                        <h:column>
+					<f:facet name="header">Clave</f:facet>    				
+                                #{listarUsuarios.clave}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Tipo</f:facet>    				
+                                #{listarUsuarios.descripcion}
+                        </h:column>
+                        
+				<h:column>
+					<f:facet name="header">Editar</f:facet>
+					<h:commandButton action="#{beanRegistroPersona.ingr(listarUsuarios.doc_identidad)}" value="Modificar" />
+					
+				<!-- <h:link value="Editar" outcome="editar_user" /> -->	
+				</h:column>
+				<h:column>
+					<f:facet name="header">Eliminar</f:facet>
+					<h:commandButton
+						actionListener="#{beanRegistroPersona.eliminarPer(listarUsuarios.doc_identidad)}"
+						value="Eliminar" />
+				</h:column>
+			</h:dataTable>
+			</h:form>
+	</div>
+	<br></br>
+	<br></br>
+	<div align="center">
+		<a href="MenuAdministrador.xhtml"><button>
+				<h3>Volver al Inicio</h3>
+			</button></a>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" />  <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b> Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno.
+	</div>
+</body>
+</html>

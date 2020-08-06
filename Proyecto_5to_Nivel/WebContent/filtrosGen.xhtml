@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link rel="StyleSheet" href="estilos/listadoUsuarios.css"
+		type="text/css" />
+	<title>Género vs Año</title>
+</h:head>
+
+<h:body>
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="MenuUsuario.xhtml">MENU PRINCIPAL</a></li>
+
+				<li><a href="cambioContraUser.xhtml">ACTUALIZAR CONTRASEÑA</a></li>
+
+				<li><a href="menuReportes.xhtml">VER REPORTES</a></li>
+
+				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<br />
+	<br />
+	<div align="center">
+
+		<h:form id="frmFiltro">
+			<p:panel header="Filtros de busqueda">
+				<p:panelGrid>
+					<p:row>
+						<p:column>Año Inicial de Búsqueda:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somAnio1" required="true"
+								value="#{graficosControl.anio1}">
+								<f:selectItems value="#{graficosControl.listaAnios}" />
+							</p:selectOneMenu>
+							<p:message for="somAnio1" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Año Final de Búsqueda:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somAnio2" required="true"
+								value="#{graficosControl.anio2}">
+								<f:selectItems value="#{graficosControl.listaAnios}" />
+							</p:selectOneMenu>
+							<p:message for="somAnio2" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<p:commandButton icon="ui-icon-search" title="Buscar"
+								value="Buscar" actionListener="#{graficosControl.buscarGen()}"
+								process="@form" update=":frmResultado,:frmFiltro" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+
+	</div>
+
+	<h:form id="frmResultado">
+		<p:panel header="Resultado">
+			<h:outputText value="#{graficosControl.resultado}" />
+
+			<div align="center">
+				<p:chart type="bar" model="#{graficosControl.horizontalBarModel}"
+					style="width:1000px;height:900px"
+					rendered="#{graficosControl.horizontalBarModel != null}" />
+			</div>
+
+		</p:panel>
+
+	</h:form>
+	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+		
+			<a href="GeneroAnio"> <p:commandButton type="button"
+			class="boton" value="Descargar en Formato de Reporte" />
+		</a> &nbsp;&nbsp;&nbsp;&nbsp;	
+
+		<a href="reportCar.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar a Filtros por Características" />
+		</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	
+
+	<a href="menuReportes.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar al Menú de Reportes" />
+	</a>
+	<br />
+	<br />
+	<br />
+	<br />
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" />  <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b> Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno.
+	</div>
+</h:body>
+</html>

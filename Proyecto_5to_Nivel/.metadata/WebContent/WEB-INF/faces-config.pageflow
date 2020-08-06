@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15946914937930" configfile="/Proyecto_5to_Nivel/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="listadoUsuarios.xhtml" x="526" y="612" id="pf159487699150142" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf159487836663545" inlinks="pf15954726226182" path="/listadoUsuarios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cambioContra.xhtml" x="803" y="612" id="pf159487836663546" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf159487836663545" path="/cambioContra.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="131" y="211" id="pf159487836663547" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf159487836663548 pf15955317044500" inlinks="pf15954871145340" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="MenuAdministrador.xhtml" x="433" y="115" id="pf159487836663549" referenceLink="//@navigationRule.11/@navigationCase.0/@toViewId|" inlinks="pf159487836663548 pf15954726226193 pf15954745494657" path="/MenuAdministrador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrarUsuario.xhtml" x="120" y="360" id="pf15953055939130" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf15953865740340 pf15953865740361 pf15954726226194 pf15954726226195" inlinks="pf15954871145351" path="/registrarUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="RegistroCorrecto.xhtml" x="490" y="276" id="pf15953055939132" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf15954871145340 pf15954871145351" inlinks="pf15953865740340" path="/RegistroCorrecto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Error.xhtml" x="554" y="463" id="pf15953055939134" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf15953865740361 pf15954726226195" path="/Error.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="EliminadoCorrecto.xhtml" x="143" y="612" id="pf15954726226196" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf15954726226182 pf15954726226193" inlinks="pf15954726226194" path="/EliminadoCorrecto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="addUsuario.xhtml" x="759" y="360" id="pf15954745494668" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" outlinks="pf15954745494669" inlinks="pf159547454946610" path="/addUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="agregadoCorrecto.xhtml" x="741" y="120" id="pf159547454946611" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf15954745494657 pf159547454946610" inlinks="pf15954745494669" path="/agregadoCorrecto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="MenuUsuario.xhtml" x="144" y="36" id="pf15955317044521" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" inlinks="pf15955317044500" path="/MenuUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="reportGeo.xhtml" x="348" y="792" id="pf15958347336710" outlinks="pf15958347336711" path="/reportGeo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="graficos.xhtml" x="537" y="792" id="pf15958347336712" inlinks="pf15958347336711" path="/graficos.xhtml"/>
+  <links id="pf159487836663545" target="pf159487836663546" source="pf159487699150142" outcome="editar_user"/>
+  <links id="pf159487836663548" target="pf159487836663549" source="pf159487836663547" outcome="1"/>
+  <links id="pf15953865740340" target="pf15953055939132" source="pf15953055939130" outcome="RegCor">
+    <bendPoints d1Width="144" d1Height="20" d2Width="-125" d2Height="56"/>
+  </links>
+  <links id="pf15953865740361" target="pf15953055939134" source="pf15953055939130" outcome="no">
+    <bendPoints d1Width="195" d1Height="82" d2Width="-210" d2Height="-21"/>
+  </links>
+  <links id="pf15954871145340" target="pf159487836663547" source="pf15953055939132" outcome="login"/>
+  <links id="pf15954871145351" target="pf15953055939130" source="pf15953055939132" outcome="volReg">
+    <bendPoints d1Width="-138" d1Height="-15" d2Width="131" d2Height="-51"/>
+  </links>
+  <links id="pf15954726226194" target="pf15954726226196" source="pf15953055939130" outcome="eliminado"/>
+  <links id="pf15954726226195" target="pf15953055939134" source="pf15953055939130" outcome="noelim">
+    <bendPoints d1Width="217" d1Height="28" d2Width="-188" d2Height="-75"/>
+  </links>
+  <links id="pf15954726226182" target="pf159487699150142" source="pf15954726226196" outcome="listado"/>
+  <links id="pf15954726226193" target="pf159487836663549" source="pf15954726226196" outcome="menu"/>
+  <links id="pf15954745494669" target="pf159547454946611" source="pf15954745494668" outcome="AddCor">
+    <bendPoints d1Width="62" d1Height="-118" d2Width="62" d2Height="122"/>
+  </links>
+  <links id="pf15954745494657" target="pf159487836663549" source="pf159547454946611" outcome="menu"/>
+  <links id="pf159547454946610" target="pf15954745494668" source="pf159547454946611" outcome="volAdd">
+    <bendPoints d1Width="-74" d1Height="114" d2Width="-74" d2Height="-126"/>
+  </links>
+  <links id="pf15955317044500" target="pf15955317044521" source="pf159487836663547" outcome="2"/>
+  <links id="pf15958347336711" target="pf15958347336712" source="pf15958347336710" outcome="grafico"/>
+</pageflow:Pageflow>

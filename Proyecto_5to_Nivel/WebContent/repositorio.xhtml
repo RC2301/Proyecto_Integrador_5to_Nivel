@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<meta charset="UTF-8" />
+
+<head>
+<link rel="StyleSheet" href="estilos/estilo.css" type="text/css" />
+<title>Licencia</title>
+<script>
+	function habilitar(value) {
+		var isChecked = document.getElementById('cbox1').checked;
+		if(isChecked){
+			document.getElementById("segundo").disabled = false;
+			document.getElementById("segundo2").disabled = false;
+			document.getElementById("segundo3").disabled = false;
+			document.getElementById("segundo4").disabled = false;
+			document.getElementById("segundo5").disabled = false;
+			document.getElementById("segundo6").disabled = false;
+			document.getElementById("segundo").style.display = "table-cell";
+			document.getElementById("segundo2").style.display ="table-cell";
+			document.getElementById("segundo3").style.display ="table-cell";
+			document.getElementById("segundo4").style.display = "table-cell";
+			document.getElementById("segundo5").style.display ="table-cell";
+			document.getElementById("segundo6").style.display ="table-cell";
+			}
+		else{
+			document.getElementById("segundo").disabled = true;
+			document.getElementById("segundo2").disabled = true;
+			document.getElementById("segundo3").disabled = true;
+			document.getElementById("segundo4").disabled = true;
+			document.getElementById("segundo5").disabled = true;
+			document.getElementById("segundo6").disabled = true;
+			document.getElementById("segundo").style.display = "none";
+			document.getElementById("segundo2").style.display = "none";
+			document.getElementById("segundo3").style.display = "none";
+			document.getElementById("segundo4").style.display = "none";
+			document.getElementById("segundo5").style.display = "none";
+			document.getElementById("segundo6").style.display = "none";
+			}
+	}
+</script>
+</head>
+<body>
+
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+		Data Report EC<br />
+			Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="index.xhtml">INICIO</a></li>
+				<li><a href="repositorio.xhtml">REPOSITORIO</a></li>
+				<li><a href="informacion.xhtml">INFORMACION</a></li>
+				<li><a href="contacto.xhtml">CONTÁCTANOS</a></li>
+				<li><a href="registrarUsuario.xhtml">REGÍSTRATE</a></li>
+				<li><a href="login.xhtml">LOGIN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div class="main">
+		<div align="center">
+			<h1>Licencia de la Aplicación:</h1>
+			<img src="imagenes/licencia.png" align="middle"
+				style="width: 403px; height: 141px;" /> <br />
+			<h3>Creative Commons:Reconocimiento-NoComercial-CompartirIgual</h3>
+			<br></br>
+		</div>
+		<div style="font-size: 20px;">
+			<p>
+				Las licencias y herramientas de derechos autorales <b>Creative
+					Commons</b>, forja un equilibrio dentro del escenario tradicional de
+				«todos los derechos reservados» que crean las leyes de derechos
+				autorales. Estas herramientas le dan a todas, desde creadoras
+				individuales hasta grandes compañías e instituciones, una vía simple
+				y estandarizada para otorgar permisos de derechos autorales a sus
+				obras creativas. La combinación de las herramientas y usuarios es un
+				procomún digital vasto y creciente, una fuente de contenidos que
+				pueden ser copiados, distribuidos, editados, remezclados, y usados
+				como base para crear, todo dentro de los límites de las leyes de
+				derecho autoral.
+			</p>
+
+			<p>Un licenciante Creative Commons debe responder un par de
+				simples preguntas en el camino para escoger una licencia — primero,
+				¿quiero permitir uso comercial o no?, y segundo, ¿quiero permitir
+				obras derivadas o no? Si un licenciante decide permitir obras
+				derivadas, puede también elegir el requisito de que cualquiera que
+				use la obra (licenciatarias), esto hace que esa nueva obra esté
+				disponible bajo los mismas términos de la licencia. Esta es la idea
+				de "CompartirIgual" y es uno de los mecanismos que (de ser escogido)
+				permite que el procomún digital crezca con el tiempo. CompartirIgual
+				se inspira en la licencia Licencia Pública Genera de GNU, usada por
+				muchos proyectos de software libre y de código abierto.</p>
+
+			<p>Las licencias CC no afectan las libertades que la ley otorga a
+				los usuarios de obras protegidas por derechos autorales, como las
+				excepciones y limitaciones a los derechos autoriales o los usos
+				justos. Las licencias Creative Commons requieren que las
+				licenciatarias obtengan permiso para hacer cualquier cosa con una
+				obra que la ley reserve exclusivamente al licenciante y que la
+				licencia no permita . Los licenciatarios deben dar crédito y
+				mantener los avisos de derechos autorales intactos en todas las
+				copias de la obra. Los licenciatarios no pueden usar medidas
+				tecnológicas para restringir a otras el acceso a la obra.</p>
+			<br /> <br />
+		</div>
+
+		<div align="center" style="font-size: 18px;">
+			<h3>Creative Commons:Reconocimiento-NoComercial-CompartirIgual</h3>
+			<table style="width: 50%;" cellspacing="1" cellpadding="2" border="0"
+				bgcolor="#5DADE2" align="center">
+
+				<caption align="top">
+					<h3>Eres libre de:</h3>
+				</caption>
+				<tr>
+					<td><b>Compartir: </b></td>
+					<td>Copiar y redestribuir el material en cualquier medio o
+						formato.</td>
+				</tr>
+
+				<tr>
+					<td><b>Adaptar: </b></td>
+					<td>Modificar, transformar y construir en base al material.</td>
+
+				</tr>
+
+
+				<tr>
+					<td colspan="2">
+						<p>El licenciante no puede revocar estas libertades mientras
+							siga los términos de la licencia.</p>
+					</td>
+				</tr>
+
+			</table>
+
+			<br></br> <br></br>
+
+			<table style="width: 50%;" cellspacing="1" cellpadding="2" border="0"
+				bgcolor="#5DADE2" align="center">
+
+				<caption align="top">
+					<h3>Bajo los siguientes términos:</h3>
+				</caption>
+				<tr>
+					<td><img src="imagenes/att.png" align="middle"
+						style="width: 50px; height: 50px;" /></td>
+					<td><b>Atribución</b></td>
+					<td>Debe otorgar el crédito apropiado , proporcionar un enlace
+						a la licencia e indicar si se realizaron cambios .</td>
+				</tr>
+
+				<tr>
+					<td><img src="imagenes/nocom.png" align="middle"
+						style="width: 50px; height: 50px;" /></td>
+					<td><b>No Comercial</b></td>
+					<td>No puede utilizar el material con fines comerciales.</td>
+				</tr>
+
+				<tr>
+					<td><img src="imagenes/redis.png" align="middle"
+						style="width: 50px; height: 50px;" /></td>
+					<td><b>Compartir Igual</b></td>
+					<td>Si modifica, transforma o desarrolla en base al material,
+						debe distribuir sus contribuciones bajo la misma licencia que el
+						original.</td>
+				</tr>
+
+				<tr>
+					<td><br /></td>
+					<td><b>Sin restricciones adicionales</b></td>
+					<td>No puede aplicar términos legales o medidas tecnológicas
+						que restrinjan legalmente a otros de hacer cualquier cosa que
+						permita la licencia.</td>
+				</tr>
+
+				<tr>
+					<td colspan="3">
+						<p>
+							Para leer la información completa. Click... <a
+								href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es">Aquí</a>
+						</p>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<br /> <br />
+
+
+
+		<div align="center">
+		<h2><label>Estás de acuerdo con las políticas de la licencia:<input
+				type="checkbox" id="cbox1" value="1"
+				onchange="habilitar(this.value);" />
+			</label></h2> <br /> <br />
+
+			<h2 id="segundo" style="display: none">Ingresa a nuestro
+				repositorio en GitHub:</h2>
+			<br />
+			<h5 id="segundo2" style="display: none">Click en la imagen</h5>
+			<br /> <a id="segundo3" style="display: none"
+				href="https://github.com/fonsiher/Proyecto-5to-nivel.git"><img
+				src="imagenes/github.png" align="middle"
+				style="width: 200px; height: 180px;" /></a> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+			<h2 id="segundo4" style="display: none">Visita nuestra Wiki:</h2>
+			<br />
+			<h5 id="segundo5" style="display: none">Click en la imagen</h5>
+			<br /> <a id="segundo6" style="display: none"
+				href="https://github.com/fonsiher/Proyecto-5to-nivel/wiki"><img
+				src="imagenes/wiki.png" align="middle"
+				style="width: 180px; height: 180px;" /></a>				
+				
+				
+		</div>
+		<br /> <br /> <br></br>
+
+	</div>
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b>
+		<img src="imagenes/licencia.png" align="top"
+			style="width: 90px; height: 25px;" /> <a href="repositorio.xhtml">Más
+			Información</a> <br /> <b>Licencia: </b>CC-BY-NC-SA <b> Autores:</b>
+		Richard Camacho - Edwin Hernández - Alisson Vizcaíno.
+	</div>
+</body>
+
+
+</html>

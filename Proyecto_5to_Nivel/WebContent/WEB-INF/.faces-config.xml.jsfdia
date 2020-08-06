@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#listadoUsuarios.xhtml"
+  PATH="/listadoUsuarios.xhtml" SHAPE="384,840,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#listadoUsuarios.xhtml:0" NAME="item"
+   PATH="/listadoUsuarios.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="editar_user::#cambioContra.xhtml"
+    NAME="output" PATH="/cambioContra.xhtml"
+    TARGET="rules:#cambioContra.xhtml" TITLE="editar_user" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#cambioContra.xhtml"
+  PATH="/cambioContra.xhtml" SHAPE="576,864,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#login.xhtml" PATH="/login.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login.xhtml:0" NAME="item"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="1::#MenuAdministrador.xhtml" NAME="output"
+    PATH="/MenuAdministrador.xhtml"
+    TARGET="rules:#MenuAdministrador.xhtml" TITLE="1" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#login.xhtml:1" NAME="item1"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="2::#MenuUsuario.xhtml" NAME="output"
+    PATH="/MenuUsuario.xhtml" TARGET="rules:#MenuUsuario.xhtml"
+    TITLE="2" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#registrarUsuario.xhtml"
+  PATH="/registrarUsuario.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#registrarUsuario.xhtml:0" NAME="item"
+   PATH="/registrarUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="RegCor::#RegistroCorrecto.xhtml"
+    NAME="output" PATH="/RegistroCorrecto.xhtml"
+    TARGET="rules:#RegistroCorrecto.xhtml" TITLE="RegCor" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#registrarUsuario.xhtml:1" NAME="item1"
+   PATH="/registrarUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="no::#Error.xhtml" NAME="output"
+    PATH="/Error.xhtml" TARGET="rules:#Error.xhtml" TITLE="no" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#registrarUsuario.xhtml:2" NAME="item2"
+   PATH="/registrarUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="eliminado::#EliminadoCorrecto.xhtml"
+    NAME="output" PATH="/EliminadoCorrecto.xhtml"
+    TARGET="rules:#EliminadoCorrecto.xhtml" TITLE="eliminado" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#registrarUsuario.xhtml:3" NAME="item3"
+   PATH="/registrarUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="noelim::#Error.xhtml" NAME="output"
+    PATH="/Error.xhtml" TARGET="rules:#Error.xhtml" TITLE="noelim" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#RegistroCorrecto.xhtml"
+  PATH="/RegistroCorrecto.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#RegistroCorrecto.xhtml:0" NAME="item"
+   PATH="/RegistroCorrecto.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#login.xhtml" NAME="output"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#RegistroCorrecto.xhtml:1" NAME="item1"
+   PATH="/RegistroCorrecto.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="volReg::#registrarUsuario.xhtml"
+    NAME="output" PATH="/registrarUsuario.xhtml"
+    TARGET="rules:#registrarUsuario.xhtml" TITLE="volReg" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#EliminadoCorrecto.xhtml"
+  PATH="/EliminadoCorrecto.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#EliminadoCorrecto.xhtml:0" NAME="item"
+   PATH="/EliminadoCorrecto.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listado::#listadoUsuarios.xhtml"
+    NAME="output" PATH="/listadoUsuarios.xhtml"
+    TARGET="rules:#listadoUsuarios.xhtml" TITLE="listado" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#EliminadoCorrecto.xhtml:1" NAME="item1"
+   PATH="/EliminadoCorrecto.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="menu::#MenuAdministrador.xhtml"
+    NAME="output" PATH="/MenuAdministrador.xhtml"
+    TARGET="rules:#MenuAdministrador.xhtml" TITLE="menu" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#addUsuario.xhtml" PATH="/addUsuario.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#addUsuario.xhtml:0" NAME="item"
+   PATH="/addUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="AddCor::#agregadoCorrecto.xhtml"
+    NAME="output" PATH="/agregadoCorrecto.xhtml"
+    TARGET="rules:#agregadoCorrecto.xhtml" TITLE="AddCor" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#agregadoCorrecto.xhtml"
+  PATH="/agregadoCorrecto.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#agregadoCorrecto.xhtml:0" NAME="item"
+   PATH="/agregadoCorrecto.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="menu::#MenuAdministrador.xhtml"
+    NAME="output" PATH="/MenuAdministrador.xhtml"
+    TARGET="rules:#MenuAdministrador.xhtml" TITLE="menu" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#agregadoCorrecto.xhtml:1" NAME="item1"
+   PATH="/agregadoCorrecto.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="volAdd::#addUsuario.xhtml" NAME="output"
+    PATH="/addUsuario.xhtml" TARGET="rules:#addUsuario.xhtml"
+    TITLE="volAdd" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#reportGeo.xhtml" PATH="/reportGeo.xhtml" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#reportGeo.xhtml:0" NAME="item"
+   PATH="/reportGeo.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="grafico::#filtrosPrvsAn.xhtml" NAME="output"
+    PATH="/filtrosPrvsAn.xhtml" TARGET="rules:#filtrosPrvsAn.xhtml"
+    TITLE="grafico" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#MenuUsuario.xhtml" PATH="/MenuUsuario.xhtml" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#filtrosPrvsAn.xhtml"
+  PATH="/filtrosPrvsAn.xhtml" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#MenuAdministrador.xhtml"
+  PATH="/MenuAdministrador.xhtml" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#Error.xhtml" PATH="/Error.xhtml" model-entity="JSFProcessGroup"/>
+</PROCESS>

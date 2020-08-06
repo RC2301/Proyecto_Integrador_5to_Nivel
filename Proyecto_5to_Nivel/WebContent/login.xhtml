@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Iniciar Sesión</title>
+	<link rel="stylesheet" href="../estilos/login.css" type="text/css" />
+
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+		type="text/css" />
+</h:head>
+<h:body>
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="index.xhtml">INICIO</a></li>
+				<li><a href="repositorio.xhtml">REPOSITORIO</a></li>
+				<li><a href="informacion.xhtml">INFORMACIÓN</a></li>
+				<li><a href="contacto.xhtml">CONTÁCTANOS</a></li>
+				<li><a href="registrarUsuario.xhtml">REGÍSTRATE</a></li>
+				<li><a href="login.xhtml">LOGIN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<h:form >
+		<div class="login-box">
+			<img src="imagenes/sin.png"
+				class="avatar animated infinite pulse faster" alt="Avatar Image" />
+			<h1 class="animated infinite zoomIn slower">Iniciar Sesion</h1>
+			<label for="username">Correo</label>
+
+			<h:inputText id="usuario"
+				value="#{beanRegistroPersona.correo_electronico}"
+				pt:placeholder="Ingrese el Correo" required="true"></h:inputText>
+
+			<label for="password">Clave</label>
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
+				pt:placeholder="Ingrese su Clave" required="true"></h:inputSecret>
+
+			<h:commandButton value="Iniciar Sesión"
+				action="#{beanRegistroPersona.ingresoAlSistema()}" />
+			<a href="index.xhtml">Página Principal</a>
+		</div>
+	</h:form>
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" /> <a
+			href="repositorio.xhtml">Más Información</a> <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b>Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno.
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<head>
+<link rel="StyleSheet" href="estilos/estilo.css" type="text/css" />
+<title>Reportes Características</title>
+<script>
+	function habilitar(value) {
+		var isChecked1 = document.getElementById('genxanio').checked;
+		var isChecked2 = document.getElementById('etxanio').checked;
+		if(isChecked1){
+			showTable1();
+			hideTable2();
+			}
+		else if(isChecked2){
+			hideTable1();
+			showTable2();
+			
+			}
+		
+		else{
+			hideTable1();
+			hideTable2();
+			}
+	}
+
+	function showTable1(){
+		document.getElementById('table1').style.visibility = "visible";
+		}
+	function hideTable1(){
+		document.getElementById('table1').style.visibility = "hidden";
+		}
+	function showTable2(){
+		document.getElementById('table2').style.visibility = "visible";
+		}
+	function hideTable2(){
+		document.getElementById('table2').style.visibility = "hidden";
+		}
+
+	function escondidos(){
+		hideTable1();
+		hideTable2();
+		}
+
+	
+</script>
+</head>
+<body onload="javascript:escondidos()">
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="MenuUsuario.xhtml">MENÚ PRINCIPAL</a></li>
+				
+				<li><a href="cambioContraUser.xhtml">ACTUALIZAR CONTRASEÑA</a></li>
+				
+				<li><a href="menuReportes.xhtml">VER REPORTES</a></li>
+				
+				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+
+
+
+	<div align="center" >
+		<h3>
+			<b>Escoja una de las Opciones según la consulta que desea realizar</b>
+		</h3>
+
+		<input type="radio" id="genxanio" name="age" 
+			onchange="habilitar(this.value);" /> <label for="genxanio">Género
+			por Años</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input
+			type="radio" id="etxanio" name="age" 
+			onchange="habilitar(this.value);" /> <label for="etxanio">Etnia
+			por Años</label> 
+		<table>
+			<tr>
+				<td><img style="width: 250px; height: 150px;"
+					src="imagenes/genero.jpg" align="center" /></td>
+
+				<td><img style="width: 250px; height: 150px;"
+					src="imagenes/etnias.jpg" align="center" /></td>
+			</tr>
+		</table>
+
+		<br /> 
+
+		<table id="table1">
+			<tr>
+				<td><a href="filtrosGen.xhtml"><button>
+							<h3>Ir a escoger Filtros por Género</h3>
+						</button></a></td>
+			</tr>
+
+		</table>
+
+		<table id="table2">
+
+			<tr>
+				<td><a href="filtrosEtn.xhtml"><button>
+							<h3>Ir a escoger Filtros por Etnia</h3>
+						</button></a></td>
+			</tr>
+
+		</table>
+
+		<br />
+		<p align="center">
+			<a href="menuReportes.xhtml"><h4>Volver al Menú de Reportes</h4></a>
+		</p>
+
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" />  <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b>
+		Richard Camacho - Edwin Hernández - Alisson Vizcaíno.
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+	<head>
+
+<title>Añadir Usuario</title>
+
+	<link rel="stylesheet" href="../estilos/registrarUsuario.css" type="text/css" />
+	
+
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" type="text/css" />
+</head>
+<body>
+<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+		Data Report EC<br />
+			Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="MenuAdministrador.xhtml">MENU PRINCIPAL</a></li>
+				<li><a href="addUsuario.xhtml">AGREGAR USUARIOS</a></li>
+					<li><a href="listadoUsuarios.xhtml">VER USUARIOS</a></li>
+					<li><a href="auditoria.xhtml">VER DATOS DE AUDITORÍA</a></li>
+					<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<h:form>
+		<div class="login-box">
+			<img src="imagenes/sin.png"
+				class="avatar animated infinite pulse faster" alt="Avatar Image" />
+			<h1 class="animated infinite zoomIn slower">Agregar Usuario</h1>
+			<label for="name">Nombre</label>
+			<h:inputText type="text" id="nombre"
+				value="#{beanRegistroPersona.nombre}"
+				pt:placeholder="Ingrese el Nombre" required="true" ></h:inputText>
+				<h:message for="nombre" style="color:red; font-family:Comic-Sans" />
+			<label for="lastname">Apellido</label>
+			<h:inputText id="apellido" value="#{beanRegistroPersona.apellido}"
+				pt:placeholder="Ingrese el Apellido" required="true"></h:inputText>
+				<h:message for="apellido" style="color:red; font-family:Comic-Sans" />
+			<label for="ci">Cedula</label>
+			<h:inputText id="doc_identidad" pt:type="number" pt:min="1" pt:pattern="^[0-9]+"
+				value="#{beanRegistroPersona.doc_identidad}"
+				pt:placeholder="Ingrese la Cedula" required="true">
+				<f:validateLength minimum="10" maximum="10" />
+				</h:inputText>		
+				<h:message for="doc_identidad" style="color:red; font-family:Comic-Sans" />
+								
+			<label for="username">Correo</label>
+			<h:inputText id="correo_electronico"  
+				value="#{beanRegistroPersona.correo_electronico}"
+				pt:placeholder="Ingrese el Correo" required="true">
+				<f:validateRegex pattern=".+[@].+[.].+" />
+				</h:inputText>
+				<h:message for="correo_electronico" style="color:red; font-family:Comic-Sans" />
+			<label for="password">Clave</label>
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}" 
+				pt:placeholder="Ingrese Clave" required="true"></h:inputSecret>
+				<h:message for="clave" style="color:red; font-family:Comic-Sans" />
+			<label for="passwordconf">Confirmar Clave</label>
+			<h:inputSecret id="clave2" value="#"
+				pt:placeholder="Confirme la contraseña" required="true" ></h:inputSecret>
+				<h:message for="clave2" style="color:red; font-family:Comic-Sans" />
+			<h:commandButton value="Guardar"
+				action="#{beanRegistroPersona.addPersona()}">
+			</h:commandButton>
+			
+			<a href="MenuAdministrador.xhtml">Menú Principal</a>
+		</div>
+	</h:form>
+	
+		<div id="pie" class="footer">
+		<b>Data Report EC 2020</b>
+		<img src="imagenes/licencia.png" align="top"
+			style="width: 90px; height: 25px;" />  <br /> <b>Licencia: </b>CC-BY-NC-SA <b> Autores:</b>
+		por: Richard Camacho - Edwin Hernández - Alisson Vizcaíno.
+	</div>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<link rel="StyleSheet" href="estilos/auditoria.css"
+	type="text/css" />
+<title>Información Auditoría</title>
+
+</head>
+<body>
+
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="MenuAdministrador.xhtml">MENU PRINCIPAL</a></li>
+				<li><a href="addUsuario.xhtml">AGREGAR USUARIOS</a></li>
+				<li><a href="listadoUsuarios.xhtml">VER USUARIOS</a></li>
+				<li><a href="auditoria.xhtml">VER DATOS DE AUDITORÍA</a></li>
+				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<br />
+	<br />
+
+	<div align="center" style="font-size: 30px;">
+
+		<br></br> <br></br>
+
+		<div align="center">
+			<h3>Información de Auditoría de la Aplicación</h3>
+		</div>
+		<h:dataTable id="auditoria" value="#{beanAuditoria.listaAuditoria()}"
+			var="listarAuditoria" border="1">
+			<h:column>
+				<f:facet name="header">Tabla</f:facet>    				
+                                #{listarAuditoria.tabla_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Operación</f:facet>    				
+                                #{listarAuditoria.operacion_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Valor Anterior</f:facet>    				
+                                #{listarAuditoria.valoranterior_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Valor Nuevo</f:facet>    				
+                                #{listarAuditoria.valornuevo_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Fecha Auditoría</f:facet>    				
+                                #{listarAuditoria.fecha_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Usuario</f:facet>    				
+                                #{listarAuditoria.usuario_aud}
+                        </h:column>
+			<!--<h:column>
+				<f:facet name="header">Esquema</f:facet>    				
+                                #{listarAuditoria.esquema_aud}
+                        </h:column>-->
+		</h:dataTable>
+	</div>
+	<br></br>
+	<br></br>
+
+	<div align="center">
+		<a href="MenuAdministrador.xhtml"><button>
+				<h3>Volver al Inicio</h3>
+			</button></a>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" />  <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b> Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno.
+	</div>
+</body>
+
+
+</html>

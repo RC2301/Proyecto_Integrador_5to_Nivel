@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+<title>Actualizacion de datos</title>
+<link rel="stylesheet" href="../estilos/cambioContraseña.css"
+	type="text/css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+	type="text/css" />
+</head>
+<body>
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="MenuAdministrador.xhtml">MENU PRINCIPAL</a></li>
+				<li><a href="addUsuario.xhtml">AGREGAR USUARIOS</a></li>
+				<li><a href="listadoUsuarios.xhtml">VER USUARIOS</a></li>
+				<li><a href="auditoria.xhtml">VER DATOS DE AUDITORÍA</a></li>
+				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<h:form>
+		<div class="login-box">
+			<img src="imagenes/sin.png"
+				class="avatar animated infinite pulse faster" alt="Avatar Image" />
+			<h1 class="animated infinite zoomIn slower">Cambio de Contraseña</h1>
+			<label for="vpassword">Ingrese la Contraseña Actual</label> <input
+				type="password" name="vclave" placeholder="Ultima Clave" /> <label
+				for="npassword">Ingrese la Nueva Clave</label>
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
+				pt:placeholder="Ingrese Clave"></h:inputSecret>
+			<label for="passwordconf">Confirmar Clave</label> 
+<input
+				type="password" name="vclave" placeholder="Confirme la Clave" />
+				<br></br>
+				<a href="listadoUsuarios.xhtml">Volver</a>
+				<h:commandButton value="Guardar"
+				action="#{beanRegistroPersona.modificarPer()}">
+			</h:commandButton>
+		</div>
+	</h:form>
+
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" />  <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b> por: Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno.
+	</div>
+</body>
+</html>
